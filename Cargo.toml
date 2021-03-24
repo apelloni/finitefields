@@ -14,7 +14,7 @@ name = "finitefields"
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-libc = "*"
+libc = "0.2.91"
 
 [build-dependencies]
-cc = "*"
+cc = "^1.0"
