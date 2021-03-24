@@ -1,7 +1,7 @@
 [package]
 name = "finitefields"
 version = "0.1.0"
-authors = ["apelloni <apelloni90@gmail.com>"]
+authors = ["apelloni <apelloni@nikhef.nl>"]
 build = "build.rs"
 description = "Perform algebraic operations between integers over a finite field"
 repository = "https://github.com/apelloni/finitefields"
