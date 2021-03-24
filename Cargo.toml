@@ -7,7 +7,6 @@ description = "Perform algebraic operations between integers over a finite field
 repository = "https://github.com/apelloni/finitefields"
 readme = "README.md"
 license = "GPL-3.0"
-license-file = "LICENSE"
 keywords = ["modular", "arithmetic"]
 
 [lib]
