@@ -1,5 +1,5 @@
-#include<stdint.h>
-//using namespace std;
+#include <stdint.h>
+// using namespace std;
 
 uint64_t mul_mod(uint64_t a, uint64_t b, uint64_t m) {
   long double x;
@@ -12,5 +12,5 @@ uint64_t mul_mod(uint64_t a, uint64_t b, uint64_t m) {
   x = a;
   c = x * b / m;
   r = (int64_t)(a * b - c * m) % (int64_t)m;
-  return r < 0 ? r + m : r;
+  return r < 0 ? r + m : (uint64_t)r;
 }

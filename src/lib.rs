@@ -1,10 +1,9 @@
 extern crate libc;
-use libc::{c_ulong, size_t, uint64_t};
+use libc::c_ulong;
 use std::fmt;
 use std::fmt::{Display, Formatter};
 use std::ops::Neg;
 use std::ops::{Add, AddAssign, Div, Mul, MulAssign, Sub};
-use std::time::{Duration, Instant}; // Binary operations //Uniary operations
 
 pub type FF = u64;
 
@@ -12,7 +11,7 @@ pub mod primes;
 
 extern "C" {
     /// Fast multiplication using C
-    pub fn mul_mod(a: uint64_t, b: uint64_t, m: uint64_t) -> uint64_t;
+    pub fn mul_mod(a: c_ulong, b: c_ulong, m: c_ulong) -> c_ulong;
 }
 
 /// Allows to perform simple algebraic operations over a finite field
@@ -279,7 +278,7 @@ impl Finitefield {
             //let r = (b / a) * x;
             let r = match FF::overflowing_mul(b / a, x) {
                 (v, false) => v,
-                (v, true) => Finitefield::mod_multiply(b / a, x, self.modulo),
+                (_, true) => Finitefield::mod_multiply(b / a, x, self.modulo),
             };
             if r < y {
                 return (g, y - r, x);
@@ -337,7 +336,8 @@ impl Finitefield {
 
 #[test]
 pub fn test() {
-    // Check arbitrary prime
+    use std::time::{Duration, Instant}; // Binary operations //Uniary operations
+                                        // Check arbitrary prime
     let module = 323780508946331;
     let mut n1 = Finitefield::new(9213372036845593434, module).unwrap();
     let n2 = Finitefield::new(9123371590535809495, module).unwrap();
