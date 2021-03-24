@@ -19,7 +19,7 @@ Allows to perform simple algebraic operations over a finite field
 
 ## Examples
 
-```
+```rust
 // Simple operations within a finite field
 
 use finitefields::{FF,Finitefield,primes};
