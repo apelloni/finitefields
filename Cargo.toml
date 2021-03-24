@@ -1,0 +1,14 @@
+[package]
+name = "finitefields"
+version = "0.1.0"
+authors = ["apelloni <apelloni90@gmail.com>"]
+
+[lib]
+name = "finitefields"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+libc = "*"
+
+[build-dependencies]
+cc = "*"
