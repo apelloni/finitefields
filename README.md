@@ -1,6 +1,6 @@
 # finitefields
-Perform algebraic operations between integers over a finite field
-
+[![crates.io](https://img.shields.io/crates/v/finitefields.svg)](https://crates.io/crates/finitefields)
+[![documentation](https://docs.rs/finitefields/badge.svg)](https://docs.rs/finitefields)
 
 Allows to perform simple algebraic operations over a finite field
 
