@@ -1,6 +1,6 @@
 [package]
 name = "finitefields"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["apelloni <apelloni@nikhef.nl>"]
 build = "build.rs"
 description = "Perform algebraic operations between integers over a finite field"
