@@ -1,6 +1,8 @@
 # finitefields
 [![crates.io](https://img.shields.io/crates/v/finitefields.svg)](https://crates.io/crates/finitefields)
 [![documentation](https://docs.rs/finitefields/badge.svg)](https://docs.rs/finitefields)
+[![Build Status](https://travis-ci.com/apelloni/finitefields.svg?branch=main)](https://travis-ci.com/apelloni/finitefields)
+[![Byy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/apelloni)
 
 Allows to perform simple algebraic operations over a finite field
 
