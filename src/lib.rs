@@ -3,7 +3,10 @@ use libc::c_ulong;
 use std::fmt;
 use std::fmt::{Display, Formatter};
 use std::ops::Neg;
-use std::ops::{Add, AddAssign, Div, Mul, MulAssign, Sub};
+use std::ops::{Add, AddAssign, Div, Mul, MulAssign, Sub, SubAssign};
+
+extern crate serde;
+use serde::{Deserialize, Serialize};
 
 pub type FF = u64;
 
@@ -52,7 +55,7 @@ extern "C" {
 ///     assert_eq!((product * product_inv).value, 1);
 /// }
 /// ```
-#[derive(Debug, Copy)]
+#[derive(Debug, Copy, Deserialize, Serialize)]
 pub struct Finitefield {
     pub value: FF,
     pub modulo: FF,
@@ -136,6 +139,12 @@ impl Sub<FF> for Finitefield {
             value: (self.value + (self.modulo - other)) % self.modulo,
             modulo: self.modulo,
         }
+    }
+}
+
+impl SubAssign for Finitefield {
+    fn sub_assign(&mut self, rhs: Finitefield) {
+        self.value = (*self - rhs).value;
     }
 }
 
